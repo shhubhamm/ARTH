@@ -1,0 +1,30 @@
+-----------------------FOR CONFIGURING AWS CLI--------------------------
+
+aws configure
+
+-----------------------FOR CREATING KEY PAIR----------------------------
+
+aws ec2 create-key-pair --key-name [name]
+
+-----------------------FOR CREATING SECURITY GROOP-----------------------
+
+aws ec2 create-security-group --group-name [name] --description [description]
+
+-----------------------FOR CREATING RULES--------------------------------
+
+aws ec2 authorize-security-group-ingress --group-name [name] --protocol [protocol] --port [port] --cidr [custom address]
+
+
+-----------------------FOR CREATING INSTANCES----------------------------
+
+aws ec2 run-instances --image-id [AMI ID] --instance-type [Instance type] --count [count] --security-group-ids [Security Group ID] --tag-specifications 'ResourceType=instance,Tags=[{Key=[key],Value=[Value]}]'  --key-name [key_name]
+
+-----------------------FOR CREATING VOLUMES--------------------------------
+
+aws ec2 create-volume --volume-type gp2 --size [size]  --availability-zone [AZ]
+
+------------------------FOR ATTACHING VOLUME-----------------------------
+
+aws ec2 attach-volume --volume-id [Volume ID] --instance-id [Instance ID] --device /dev/sdf
+
+
